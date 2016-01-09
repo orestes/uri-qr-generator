@@ -1,7 +1,7 @@
 {
   "name": "quaero-qr-generator",
   "version": "1.0.0",
-  "description": "",
+  "description": "An HTTP API QR code generator",
   "repository": "https://github.com/orestes/uri-qr-generator.git",
   "main": "server.js",
   "scripts": {
