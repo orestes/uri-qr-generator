@@ -13,14 +13,14 @@
       "description": "Where the HTTP server should listen.",
       "value": "8080"
     },
+    "PARAM_NAME": {
+      "description": "The `GET` param name containing the URI to encode as a QR Code.",
+      "value": "uri"
+    },
     "URI_PREFIX": {
       "description": "A prefix prepended to the all the URIs",
       "value": "",
       "required": false
-    },
-    "PARAM_NAME": {
-      "description": "The `GET` param name containing the URI to encode as a QR Code.",
-      "value": "uri"
     }
   }
 }
