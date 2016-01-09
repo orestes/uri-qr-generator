@@ -1,0 +1,29 @@
+{
+  "name": "quaero-qr-generator",
+  "version": "1.0.0",
+  "description": "",
+  "repository": "https://github.com/orestes/uri-qr-generator.git",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "Orestes Carracedo <orestes.ca@gmail.com> (https://orestes.io/)",
+  "license": "MIT",
+  "dependencies": {
+    "express": "4.13.3",
+    "qr-image": "3.1.0"
+  },
+  "devDependencies": {
+    "commitizen": "2.4.6",
+    "cz-conventional-changelog": "1.1.5",
+    "i": "0.3.3",
+    "jscs": "2.8.0",
+    "jshint": "2.8.0"
+  },
+  "config": {
+    "commitizen": {
+      "path": "node_modules/cz-conventional-changelog"
+    }
+  }
+}
