@@ -9,10 +9,6 @@
   },
   "image": "heroku/nodejs",
   "env": {
-    "HTTP_PORT": {
-      "description": "Where the HTTP server should listen.",
-      "value": "8080"
-    },
     "PARAM_NAME": {
       "description": "The `GET` param name containing the URI to encode as a QR Code.",
       "value": "uri"
