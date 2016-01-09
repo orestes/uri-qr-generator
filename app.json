@@ -1,5 +1,6 @@
 {
   "name": "uri-qr-generator",
+  "logo": "https://cdn.rawgit.com/orestes/uri-qr-generator/master/logo.png",
   "description": "An HTTP API QR code generator",
   "repository": "https://github.com/orestes/uri-qr-generator",
   "keywords": ["qr", "uri", "generator"],
