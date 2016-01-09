@@ -1,5 +1,11 @@
 # uri-qr-generator
 
+![dependencies](https://david-dm.org/orestes/uri-qr-generator.svg)
+![release](https://img.shields.io/github/release/qubyte/rubidium.svg)
+![downloads](https://img.shields.io/github/downloads/orestes/uri-qr-generator/total.svg)
+![issues](https://img.shields.io/github/issues/orestes/uri-qr-generator.svg)
+![license](https://img.shields.io/github/license/orestes/uri-qr-generator.svg)
+
 A simple HTTP API to generate URI QR codes in SVG format
 
 ## Deploy to Heroku
