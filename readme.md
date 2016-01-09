@@ -2,35 +2,38 @@
 
 A simple HTTP API to generate URI QR codes in SVG format
 
-## Setup
+## Deploy to Heroku
+
+[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy)
+
+## Manual deploy
 
 ```
 git clone https://github.com/orestes/uri-qr-generator.git
 cd uri-qr-generator
 npm install
-cp config.template.json config.json
 node server.js
 ```
 
 If everything's working correctly, you'll get the following message:
 
 ```
-quaero-qr-generator is now listening on port 8080
+uri-qr-generator is now listening on port 8080
 ```
 
 ## Configuration
 
-Edit `config.json`:
+If they're present, we make use of the following environment variables:
 
-| Parameter | Default |  Use |
-|-|-|-|
-| port | `80` | Where the HTTP server should listen. |
-| uriPrefix | `""`|   A prefix prepended to the all the URIs |
-| paramName | `uri` | The `GET` param name containing the URI to encode as a QR Code. |
-w
+| Variable   | Setting                                                         | Default |
+|------------|-----------------------------------------------------------------|---------|
+| PORT       | Where the HTTP server should listen.                            | `8080`  |
+| PARAM_NAME | The `GET` param name containing the URI to encode as a QR Code. | `uri`   |
+| URI_PREFIX | A prefix prepended to the all the URIs                          | *empty* |
+
 ## Usage
 
-Make an `HTTP GET` request to `https://server:port/?uri=https:%2F%2Fsome-server/a/b`. The response is a QR Code in SVG format. This is the QR encoded representation of `https://some-server/a/b` URI.
+Make an `HTTP GET` request to `https://server:port/?uri=https:%2F%2Fsome-server/a/b`. The response is a QR Code in SVG format. This is the QR encoded representation of the `https://some-server/a/b` URI.
 
 Remember to correctly encode `GET` params.
 
@@ -38,7 +41,7 @@ Remember to correctly encode `GET` params.
 
 Since we're using GET params, we can use the request URI as an image source, which be cached by browsers, proxies, etc...
 
-If your `port` parameter is set to `80` (the default HTTP port in browsers) in `config.json`, you can skip the port when using the images
+If your `PORT` parameter is set to `80` (the default HTTP port in browsers), you can skip the port when using the images
 
 `<img src="https://server/?uri=https:%2F%2Fsome-server/a/b" alt="https://some-server/a/b" />`
 
@@ -46,19 +49,9 @@ If your `port` parameter is set to `80` (the default HTTP port in browsers) in `
 
 Unless you protect your API (by proxying through some other HTTP server, for example), anyone making requests to your service could be generating QR codes for free using your resources.
 
-A typical use case is generating QR codes for a single domain name. Set your **uriPrefix** to `"https://my-domain"` and then pass relative URLs in your `GET` param values. Since every QR code will now start with your domain name there's no use for anyone else.
+A typical use case is generating QR codes for a single domain name. Set your **URI_PREFIX** to `"https://my-domain"` and then pass relative URLs in your `GET` param values. Since every QR code will now start with your domain name, your service won't be useful for anyone else.
 
 You should also rename the GET param to `path` so the API requests are more clear:
-
-Example `config.json`
-
-```
-{
-  "port": 8080,
-  "uriPrefix": "https://my-domain",
-  "paramName": "path"
-}
-```
 
 Now, `http://server:port/?path=/a/b` will return a QR Code in SVG format, pointing to `https://my-domain/a/b`
 
@@ -66,9 +59,10 @@ Now, `http://server:port/?path=/a/b` will return a QR Code in SVG format, pointi
 
 Make sure the HTTP port (*default: 8080*) is not in use by some other process and/or change the HTTP port in the configuration. In some operating systems, you cannot listen on ports under 1000 without root permissions.
 
-Feel free to [open an issue here](https://github.com/orestes/uri-qr-generator/issues)
+[Report issues here](https://github.com/orestes/uri-qr-generator/issues)
 
 ## License
+
 The MIT License (MIT)
 
 Copyright (c) 2016 Orestes Carracedo
