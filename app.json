@@ -7,6 +7,7 @@
   "scripts": {
     "postdeploy": "npm install"
   },
+  "success_url": "/",
   "image": "heroku/nodejs",
   "env": {
     "PARAM_NAME": {
